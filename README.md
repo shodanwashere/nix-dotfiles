@@ -1,2 +1,3 @@
-# nix-dotfiles
-Dotfiles for use in NixOS, written by yours truly. :)
+# Shodan's Nix Dotflies
+> Dotfiles for use in NixOS, written by yours truly. :)
+<hr>
