@@ -65,15 +65,15 @@ in
         };
         ExtensionSettings = {
           "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4237670/ublock_origin-1.56.0.xpi";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "force_installed";
           };
           "jid1-q4sG8pYhq8KGHs@jetpack" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4241438/adblock_for_youtube-0.4.6.xpi";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/adblock-for-youtube/latest.xpi";
             installation_mode = "force_installed";
           };
           "MinYT@example.org" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4225700/youtube_suite_search_fixer-7.0.xpi";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/youtube-suite-search-fixer/latest.xpi";
             installation_mode = "force_installed";
           };
         };
