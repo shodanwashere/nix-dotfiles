@@ -44,6 +44,7 @@ in
       obsidian
       steam
       minecraft
+      gnome.gnome-terminal
     ];
 
     programs.steam = {
