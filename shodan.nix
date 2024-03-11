@@ -37,14 +37,19 @@ in
       curl
       git
       gnome.gnome-tweaks
+      gnome.gnome-terminal
       gnomeExtensions.dash-to-dock
+      gnomeExtensions.just-perfection
       discord
       spotify
       syncthing
       obsidian
       steam
       minecraft
-      gnome.gnome-terminal
+      neofetch
+      flat-remix-icon-theme
+      flat-remix-gtk
+      flat-remix-gnome
     ];
 
     programs.steam = {
