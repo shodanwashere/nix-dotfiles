@@ -50,6 +50,7 @@ in
       flat-remix-icon-theme
       flat-remix-gtk
       flat-remix-gnome
+      tree
     ];
 
     programs.steam = {
