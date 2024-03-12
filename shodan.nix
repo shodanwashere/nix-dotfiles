@@ -95,5 +95,8 @@ in
     nixpkgs.config.permittedInsecurePackages = [
       "electron-25.9.0"
     ];
+
+    virtualisation.docker.enable = true;
+    users.users.shodan.extraGroups = [ "docker" ];
   };
 }
