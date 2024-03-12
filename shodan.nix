@@ -51,6 +51,7 @@ in
       flat-remix-gtk
       flat-remix-gnome
       tree
+      jdk11
     ];
 
     programs.steam = {
@@ -86,7 +87,7 @@ in
           "sponsorBlocker@ajay.app" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
             installation_mode = "force_installed";
-          }
+          };
         };
       };
     };
