@@ -1,0 +1,14 @@
+#!/bin/bash
+
+### Based on a script presented by NoBoilerplate (https://www.youtube.com/watch?v=CwfKlX3rA6E) ###
+
+set -e                                                                                               # script will exit immediately if an error occurs
+pushd ~/nix/                                                                                         # push previous dir to stack and enter my nix file directory
+vi shodan.nix                                                                                        # open nix file on vim
+# alejandra . &>/dev/null                                                                            # format the code properly. stays commented until alejandra is installed.
+git diff -U0 *.nix                                                                                   # Show me only lines where there were changes
+echo "»»» NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && false) # either the rebuild goes through with no problems, or we show our log file and only display the errors
+gen=$(nixos-rebuild list-generations | grep current)                                                 # get new NixOS gen number
+git commit -am "$gen"                                                                                # commit to git with gen number
+popd                                                                                                 # all done.
