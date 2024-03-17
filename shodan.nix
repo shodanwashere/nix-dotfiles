@@ -42,6 +42,7 @@ in
       gnome.gnome-terminal                # do not use if gnome is not used
       gnomeExtensions.dash-to-dock        # do not use if gnome is not used
       gnomeExtensions.just-perfection     # do not use if gnome is not used
+      gnomeExtensions.appindicator        # do not use if gnome is not used
       discord
       spotify
       syncthing                           # do not use if synching is not needed
