@@ -66,7 +66,6 @@ in
         name = "discord";
         exec = "discord";
         desktopName = "Discord";
-        icon = "${pkgs.flat-remix-icon-theme}/share/icons/Flat-Remix-Red-Dark/scalable/apps/discord.svg";
       })
     ];
 
@@ -130,7 +129,11 @@ in
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
+      extraPackages = [ pkgs.libvdpau-va-gl ];
     };
+
+    environment.variables.VDPAU_DRIVER = lib.mkIf cfg.nvidia "va_gl";
+    environment.variables.LIBVA_DRIVER_NAME = lib.mkIf cfg.nvidia "nvidia";
 
     services.xserver.videoDrivers = lib.mkIf cfg.nvidia ["nvidia"];
 
