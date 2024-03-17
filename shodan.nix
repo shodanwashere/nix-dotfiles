@@ -54,9 +54,8 @@ in
       steam                               # do not use if you dont want games
       minecraft                           # do not use if you dont want games
       neofetch
-      flat-remix-icon-theme               # do not use if you dont need this
-      flat-remix-gtk                      # do not use if you dont need this
-      flat-remix-gnome                    # do not use if you dont need this
+      papirus-icon-theme
+      papirus-folders
       tree
       etcher
       jdk11
