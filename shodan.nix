@@ -66,6 +66,7 @@ in
         name = "discord";
         exec = "discord";
         desktopName = "Discord";
+        icon = "${pkgs.flat-remix-icon-theme}/share/icons/Flat-Remix-Red-Dark/scalable/apps/discord.svg";
       })
     ];
 
