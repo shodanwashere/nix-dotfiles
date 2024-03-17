@@ -58,7 +58,7 @@ in
       tree
       etcher
       jdk11
-      (pkgs.writeShellApplication {
+      (pkgs.writeShellApplication {       # universal : use discord without hw accel
         name = "discord";
         text = "${pkgs.discord}/bin/discord --use-gl=desktop";
       })
