@@ -54,8 +54,7 @@ in
       steam                               # do not use if you dont want games
       minecraft                           # do not use if you dont want games
       neofetch
-      papirus-icon-theme
-      papirus-folders
+      (pkgs.papirus-icon-theme.override { color = "green"; })
       tree
       etcher
       jdk11
