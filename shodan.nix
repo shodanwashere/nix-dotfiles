@@ -43,10 +43,6 @@ in
       gnomeExtensions.dash-to-dock        # do not use if gnome is not used
       gnomeExtensions.just-perfection     # do not use if gnome is not used
       discord
-      (pkgs.writeShellApplication {
-        name = "discord";
-        text = "${pkgs.discord}/bin/discord --use-gl=desktop";
-      })
       spotify
       syncthing                           # do not use if synching is not needed
       obsidian
@@ -62,6 +58,15 @@ in
       tree
       etcher
       jdk11
+      (pkgs.writeShellApplication {
+        name = "discord";
+        text = "${pkgs.discord}/bin/discord --use-gl=desktop";
+      })
+      (pkgs.makeDesktopItem {
+        name = "discord";
+        exec = "discord";
+        desktopName = "Discord";
+      })
     ];
 
     # Steam Settings
