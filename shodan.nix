@@ -12,8 +12,9 @@ in
         ID of the Phantom Device
       '';
     };
-  };
 
+    nvidia = lib.mkEnableOption "enable nvidia drivers";
+  };
 
   config = lib.mkIf cfg.enable {
     # Configure Syncthing as a Service to run on startup
@@ -45,6 +46,9 @@ in
       spotify
       syncthing                           # do not use if synching is not needed
       obsidian
+      kdenlive
+      obs-studio
+      audacity
       steam                               # do not use if you dont want games
       minecraft                           # do not use if you dont want games
       neofetch
@@ -52,6 +56,7 @@ in
       flat-remix-gtk                      # do not use if you dont need this
       flat-remix-gnome                    # do not use if you dont need this
       tree
+      etcher
       jdk11
     ];
 
@@ -102,11 +107,32 @@ in
 
     # Insecure Packages
     nixpkgs.config.permittedInsecurePackages = [
-      # Needed by Discord?
+      # needed by Discord
       "electron-25.9.0"
+      # needed by balenaEtcher
+      "electron-19.1.9"
     ];
 
     virtualisation.docker.enable = true;
     users.users.shodan.extraGroups = [ "docker" ];
+
+    hardware.opengl = lib.mkIf cfg.nvidia {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+
+    services.xserver.videoDrivers = lib.mkIf cfg.nvidia ["nvidia"];
+
+    hardware.nvidia = lib.mkIf cfg.nvidia {
+      modesetting.enable = true;
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
   };
 }
