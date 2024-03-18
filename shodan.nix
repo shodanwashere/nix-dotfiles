@@ -33,6 +33,11 @@ in
       };
     };
 
+    environment.sessionVariables = {
+      # Hint electron apps to use wayland
+      NIXOS_OZONE_WL = "1";
+    };
+
     environment.systemPackages = with pkgs; [
       vim                                 # TODO: add nvim when dotfile mastery gained
       wget
