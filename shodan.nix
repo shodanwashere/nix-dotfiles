@@ -28,7 +28,10 @@ in
         overrideFolders = true;
         settings = {
           devices = {
-            "phantom" = { id = "${cfg.phantomID}"; };  # Automatically add homeserver to configuration
+            "phantom" = { 
+              id = "${cfg.phantomID}";
+              autoAcceptFolders = true; 
+            };  # Automatically add homeserver to configuration
           };
           folders = {
             "Default Folder" = {
