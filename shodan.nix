@@ -25,19 +25,12 @@ in
         dataDir = "/home/shodan";
         configDir = "/home/shodan/.config/syncthing";
         overrideDevices = true;
-        overrideFolders = true;
         settings = {
           devices = {
             "phantom" = { 
               id = "${cfg.phantomID}";
               autoAcceptFolders = true; 
             };  # Automatically add homeserver to configuration
-          };
-          folders = {
-            "Default Folder" = {
-              path = "/home/shodan/Sync";
-              devices = ["phantom"];
-            };
           };
         };
       };
