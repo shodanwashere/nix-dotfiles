@@ -33,11 +33,6 @@ in
       };
     };
 
-    environment.sessionVariables = {
-      # Hint electron apps to use wayland
-      NIXOS_OZONE_WL = "1";
-    };
-
     environment.systemPackages = with pkgs; [
       vim                                 # TODO: add nvim when dotfile mastery gained
       wget
@@ -63,6 +58,7 @@ in
       tree
       etcher
       jdk11
+      
     ];
 
     # Steam Settings
@@ -125,7 +121,15 @@ in
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = [ pkgs.libvdpau-va-gl ];
+      extraPackages = with pkgs; [
+        amdvlk
+        intel-media-driver      # LIBVA_DRIVER_NAME=iHD
+        libvdpau-va-gl
+        nvidia-vaapi-driver
+        vaapiIntel                  # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        vaapiVdpau
+        vulkan-validation-layers
+      ];
     };
 
     environment.variables.VDPAU_DRIVER = lib.mkIf cfg.nvidia "va_gl";
