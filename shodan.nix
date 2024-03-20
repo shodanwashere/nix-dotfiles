@@ -32,7 +32,6 @@ in
           devices = {
             "phantom" = { 
               id = "${cfg.phantomID}";
-              autoAcceptFolders = true; 
             };  # Automatically add homeserver to configuration
           };
         };
