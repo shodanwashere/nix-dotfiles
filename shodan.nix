@@ -61,7 +61,7 @@ in
       tree
       etcher
       jdk11
-      
+      neovim
     ];
 
     # Steam Settings
