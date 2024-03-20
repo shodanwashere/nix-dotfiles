@@ -62,6 +62,7 @@ in
       etcher
       jdk11
       neovim
+      maven
     ];
 
     # Steam Settings
