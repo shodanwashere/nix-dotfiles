@@ -26,6 +26,9 @@ in
         configDir = "/home/shodan/.config/syncthing";
         overrideDevices = true;
         settings = {
+          options = {
+            urAccepted = -1;
+          };
           devices = {
             "phantom" = { 
               id = "${cfg.phantomID}";
