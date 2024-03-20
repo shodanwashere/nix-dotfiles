@@ -25,6 +25,7 @@ in
         dataDir = "/home/shodan";
         configDir = "/home/shodan/.config/syncthing";
         overrideDevices = true;
+        overrideFolders = false;
         settings = {
           options = {
             urAccepted = -1;
